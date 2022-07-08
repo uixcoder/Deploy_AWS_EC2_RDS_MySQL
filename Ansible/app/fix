@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#include ip of servers
+. Deploy_AWS_EC2_PostgerSQL/config/hosts_app
+
+find . -type f -name "*" -exec sed -i 's/3.3.6/3.4.1/g' {} +
+
+find . -type f -name "pom.xml" -exec sed -i "s/jdbc:mysql:\/\/localhost:3306/jdbc:mysql:\/\/$db_server_ip:3306/g" {} +
+
+find . -type f -name 'pom.xml' -exec sed -i 's/activate_mysql/<activation><activeByDefault>true<\/activeByDefault><\/activation>/g' {} +
+
+find . -type f -name 'pom.xml' -exec sed -i 's/activate_postgresql//g' {} +
+
+jdbc:mysql://localhost:3306
