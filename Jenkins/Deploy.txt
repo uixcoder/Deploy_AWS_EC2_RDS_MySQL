@@ -18,7 +18,7 @@ pipeline {
             steps {
                 git branch: 'master', url: 'https://github.com/uixcoder/spring-framework-petclinic.git'
                 dir ('Deploy') {
-                    git branch: 'master', url: 'https://github.com/uixcoder/Deploy_AWS_EC2_PostgerSQL.git'
+                    git branch: 'master', url: 'https://github.com/uixcoder/Deploy_AWS_EC2_RDS_MySQL.git'
                 }
             }
         }
