@@ -2,7 +2,7 @@ resource "aws_instance" "App_PetClinic_TF" {
   ami                    = "ami-0bf2ce41790745811"
   instance_type          = "t3.micro"
   key_name               = "ATC"
-  vpc_security_group_ids = [aws_security_group.sg_app.id]
+  vpc_security_group_ids = [aws_security_group.sg_rds_app.id]
   credit_specification {
     cpu_credits = "standard"
   }
