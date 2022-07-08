@@ -7,14 +7,14 @@ resource "aws_instance" "App_PetClinic_TF" {
     cpu_credits = "standard"
   }
   tags = {
-    Name    = "App_TF"
+    Name    = "App_RDS_TF"
     Owner   = "idanylyuk"
     Project = "Petclinic"
   }
 }
 
-resource "aws_security_group" "sg_app" {
-  name = "sg_app_pet"
+resource "aws_security_group" "sg_rds_app" {
+  name = "sg_rds_app_pet"
   ingress {
     from_port   = "80"
     to_port     = "80"
@@ -35,7 +35,7 @@ resource "aws_security_group" "sg_app" {
     ipv6_cidr_blocks = ["::/0"]
   }
   tags = {
-    Name = "App_TF"
+    Name = "Ap_RDS_TF"
   }
 }
 
