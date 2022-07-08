@@ -8,7 +8,7 @@ terraform {
     bucket         = "pet-clinic-project2"
     key            = "pet2-clinic-tf.tfstate"
     encrypt        = true
-    dynamodb_table = "pet2clinic-tf-lock"
+    dynamodb_table = "petclinic2-tf-lock"
   }
 
 }
