@@ -53,8 +53,6 @@ pipeline {
                 sh script: '''
                     chdir Deploy/Ansible
                     ansible-playbook configAppServer.yml
-                    ansible-playbook configDbServer.yml
-                    
                 '''                 
                 sh "rm -f Deploy/config/ATC.pem"
             }
