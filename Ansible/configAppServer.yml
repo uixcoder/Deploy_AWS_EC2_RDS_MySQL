@@ -168,7 +168,7 @@
         create: true   
 
     - name: Set ownership permissions
-      shell: chown mysqld_exporter /etc/.mysqld_exporter.cnf
+      shell: chown root:mysql_exporter /etc/.mysqld_exporter.cnf
       args:
         warn: false
 
