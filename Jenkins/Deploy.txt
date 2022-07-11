@@ -38,6 +38,8 @@ pipeline {
                 sh "find . -type f -name 'pom.xml' -exec sed -i 's/db1_name_template/$DB_NAME/g' {} +"
                 sh "find . -type f -name 'pom.xml' -exec sed -i 's/db1_user_template/$DB_USER/g' {} +"
                 sh "find . -type f -name 'pom.xml' -exec sed -i 's/db1_password_template/$DB_PASSWORD/g' {} +"
+                sh "find ./Deploy/Ansible/ -type f -name 'configAppServer.yml' -exec sed -i 's/db_user_template/$DB_USER/g' {} +"
+                sh "find ./Deploy/Ansible/ -type f -name 'configAppServer.yml' -exec sed -i 's/db_password_template/$DB_PASSWORD/g' {} +"                 
             }
         }        
         stage ('Config AWS infrastructure'){
