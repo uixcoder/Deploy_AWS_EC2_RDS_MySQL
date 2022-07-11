@@ -203,7 +203,7 @@
           --collect.perf_schema.indexiowaits \
           --collect.perf_schema.tableiowaits \
           --collect.slave_status \
-          --web.listen-address=<strong>0.0.0.0:9104</strong>
+          --web.listen-address=0.0.0.0:9104
 
           [Install]
           WantedBy=multi-user.target
