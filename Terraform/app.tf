@@ -16,6 +16,12 @@ resource "aws_instance" "App_PetClinic_TF" {
 resource "aws_security_group" "sg_rds_app" {
   name = "sg_rds_app_pet"
   ingress {
+    from_port   = "9100"
+    to_port     = "9100"
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
     from_port   = "80"
     to_port     = "80"
     protocol    = "tcp"
@@ -39,7 +45,7 @@ resource "aws_security_group" "sg_rds_app" {
   }
 }
 
-resource "aws_route53_record" "pet" {
+resource "aws_route53_record" "apppet2" {
   zone_id = "Z0118956EU069IAZHTCP"
   name    = "pet2.xcoder.pp.ua"
   type    = "A"
