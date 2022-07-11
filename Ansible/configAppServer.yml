@@ -162,8 +162,8 @@
         path: /etc/.mysqld_exporter.cnf
         block: |
           [client]
-          user= {{ db_user }}
-          password= {{ db_password }}
+          user={{ db_user}}
+          password={{ db_password }}
           host=db2.xcoder.pp.ua
         create: true   
 
